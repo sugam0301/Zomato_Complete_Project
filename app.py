@@ -1,3 +1,5 @@
+#main file where we run our app and FLASK API
+
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pandas as pd
@@ -25,6 +27,7 @@ def home():
     return render_template('Zomato.html')
 
 
+#In this the main prediction plus the html part of the chatbot is linked
 @app.route('/predict', methods=['POST'])
 @cross_origin()
 def predict():
@@ -45,6 +48,7 @@ def predict():
         return render_template('Zomato.html')
 
 
+# This is used for functioning of Chatbot
 @app.post("/pred")
 @cross_origin()
 def pred():
